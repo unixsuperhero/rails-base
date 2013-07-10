@@ -9,23 +9,41 @@ cat <<MSG
 
   STEPS
 
-  1. Change the temporary app name
-  2. Change temporary database names
+  1. Create rails_base branch (reference starting point and review rails-base updates)
+  2. Install bundler gem
+  3. bundle install
+  4. Change the temporary app name
+  5. Change temporary database names
+  ...
+  n. Commit changes
 
   ------------------------------------------------
 
 MSG
 
-echo '1. Enter the new app name as a class. (eg. FakeAppName)'
+echo '1. Create rails_base branch'
+git branch rails_base
+
+echo
+echo '2. Install bundler gem'
+gem install bundler
+
+echo
+echo '3. bundler install'
+bundle install
+
+echo
+echo '4. Enter the new app name as a class. (eg. FakeAppName)'
 read -p 'New App Name: ' appname
 vim +"bufdo %s/ChangeMe/$appname/gc" $(git grep -El 'ChangeMe' | grep -v '^setup$')
 
 echo
-echo '2. Enter the new database name in snake case. (eg. fake_app_name)'
+echo '5. Enter the new database name in snake case. (eg. fake_app_name)'
 read -p 'New Database Name: ' dbname
 vim +"bufdo %s/changeme/$dbname/gc" config/database.yml
 
 echo
+echo 'n. Commit changes'
 git add --all; git commit -m "Finished $appname Initalization Script"
 
 echo
