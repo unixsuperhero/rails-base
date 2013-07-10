@@ -7,6 +7,12 @@ RailsBase
 
 My boilerplate Rails app.  Whenever I create a new site, I clone this repo.
 
+# Initial Steps
+
+    git clone git@github.com:unixsuperhero/rails-base.git
+    cd rails-base
+    sh setup
+
 # Impractical Ideas for the Future
 
 * This could be a:

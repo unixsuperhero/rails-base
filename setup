@@ -1,0 +1,4 @@
+
+echo "Rename temp app name to specific app name. (s/rails.?base/NewAppName/)"
+read -p 'Press ENTER to continue'
+vim $(git grep -Eil 'rails.?base|base.?rails')
