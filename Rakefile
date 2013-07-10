@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RailsBase::Application.load_tasks
+ChangeMe::Application.load_tasks

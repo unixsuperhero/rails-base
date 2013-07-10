@@ -1,4 +1,4 @@
-RailsBase::Application.routes.draw do
+ChangeMe::Application.routes.draw do
   #devise_for :admins
 
   #authenticate :admin do

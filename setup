@@ -1,4 +1,31 @@
 
-echo "Rename temp app name to specific app name. (s/rails.?base/NewAppName/)"
-read -p 'Press ENTER to continue'
-vim $(git grep -Eil 'rails.?base|base.?rails')
+cat <<MSG
+
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+  Setup New Rails App
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+
+  STEPS
+
+  1. Change the temporary app name
+  2. Change temporary database names
+
+  ------------------------------------------------
+
+MSG
+
+echo '1. Enter the new app name as a class. (eg. FakeAppName)'
+read -p 'New App Name: ' appname
+vim +"bufdo %s/ChangeMe/$appname/gc" $(git grep -El 'ChangeMe' | grep -v '^setup$')
+
+echo
+echo '2. Enter the new database name in snake case. (eg. fake_app_name)'
+read -p 'New Database Name: ' dbname
+vim +"bufdo %s/changeme/$dbname/gc" config/database.yml
+
+echo
+echo 'Done.'
+echo
+
