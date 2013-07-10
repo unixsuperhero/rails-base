@@ -26,6 +26,9 @@ read -p 'New Database Name: ' dbname
 vim +"bufdo %s/changeme/$dbname/gc" config/database.yml
 
 echo
+git add --all; git commit -m "Finished $appname Initalization Script"
+
+echo
 echo 'Done.'
 echo
 
