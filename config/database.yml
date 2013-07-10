@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   username: dev
-  database: rails-base-development
+  database: rails_base_development
   pool: 5
   timeout: 5000
 
@@ -16,6 +16,6 @@ development:
 test:
   adapter: postgresql
   username: dev
-  database: rails-base-test
+  database: rails_base_test
   pool: 5
   timeout: 5000
