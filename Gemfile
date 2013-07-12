@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Rails
-gem 'rails', ' ~> 3.2.12'
+gem 'rails', '~> 4.0.0'
 
 # DB
 gem 'pg'
@@ -25,10 +25,9 @@ gem 'twitter-bootstrap-rails'
 # Optional
 gem 'devise'
 
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'uglifier'
-end
+# old assets group
+gem 'sass-rails'
+gem 'uglifier'
 
 group :development, :test do
   gem 'simplecov', :require => false
