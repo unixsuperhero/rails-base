@@ -23,7 +23,7 @@ gem 'twitter-bootstrap-rails'
 # rails g bootstrap:install static
 
 # Optional
-gem 'devise'
+gem 'devise', :github => 'plataformatec/devise', :branch => 'rails4'
 
 # old assets group
 gem 'sass-rails'
